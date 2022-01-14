@@ -140,11 +140,14 @@ export class ZuluDistribution extends JavaBase {
 
   private getPlatformOption(): string {
     // Azul has own platform names so need to map them
+    console.log(`process platform is ${process.platform}`);
     switch (process.platform) {
       case 'darwin':
         return 'macos';
       case 'win32':
         return 'windows';
+      case 'linux':
+        return 'linux';
       default:
         return process.platform;
     }
